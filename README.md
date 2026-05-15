@@ -2,8 +2,6 @@
 
 A local tool for QA'ing ASR ground-truth pairs against **AssemblyAI Universal-3 Pro** async transcription. Drop a folder of `(audio, ground_truth.txt)` pairings, see WER + every insertion / substitution / deletion, mark each diff as **ASR Right / ASR Wrong / Neither** (with optional inline replacement or `[inaudible]`), and export corrected ground truth per-file or as a ZIP.
 
-![overview](https://github.com/AssemblyAI-Solutions/truth-file-corrector/assets/placeholder/preview.png)
-
 ## What you need
 
 - **Python 3.10+** (`python3 --version`)
