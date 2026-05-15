@@ -1,0 +1,339 @@
+/* Page layout */
+.page {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  border-bottom: 1px solid var(--gray-a4);
+  background-color: var(--color-background);
+}
+
+.modelLabel {
+  border: 1px solid var(--gray-a4);
+  border-radius: var(--radius-3);
+  background-color: var(--gray-a2);
+}
+
+.groundTruthButton {
+  min-height: 80px;
+  border: 2px dashed var(--gray-a5);
+  border-radius: var(--radius-3);
+  background-color: var(--gray-a2);
+  color: var(--accent-9);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--accent-7);
+    background-color: var(--accent-a2);
+  }
+}
+
+.groundTruthFile {
+  border: 1px solid var(--gray-a4);
+  border-radius: var(--radius-3);
+  background-color: var(--gray-a2);
+}
+
+.compareButton {
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Content area */
+.contentWrapper {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Left sidebar (settings) */
+.settingsSidebar {
+  width: 300px;
+  min-width: 300px;
+  border-right: 1px solid var(--gray-a4);
+  overflow-y: auto;
+}
+
+.sidebarTitle {
+  color: var(--blue-11);
+  letter-spacing: -0.02em;
+}
+
+.sectionLabel {
+  letter-spacing: 0.05em;
+}
+
+/* Audio dropzone */
+.dropzone {
+  min-height: 80px;
+  border-radius: var(--radius-3);
+  border: 2px dashed var(--gray-a5);
+  background-color: var(--gray-a2);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover,
+  &.dropzoneActive {
+    border-color: var(--accent-7);
+    background-color: var(--accent-a2);
+  }
+}
+
+/* File card */
+.fileCard {
+  border: 1px solid var(--gray-a4);
+  border-radius: var(--radius-3);
+  background-color: var(--gray-a2);
+}
+
+.fileCardIcon {
+  border-radius: var(--radius-2);
+  background-color: var(--accent-3);
+  color: var(--accent-9);
+}
+
+/* Prompt suggestion chips */
+.suggestionChip {
+  border: 1px solid var(--gray-a4);
+  border-radius: var(--radius-full);
+  background-color: var(--gray-a2);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--accent-7);
+    background-color: var(--accent-a2);
+  }
+}
+
+/* Pairings list (multi-pair extension) */
+.pairingsList {
+  border: 1px solid var(--gray-a4);
+  border-radius: var(--radius-3);
+  background-color: var(--color-background);
+  overflow: hidden;
+
+  &.dropTarget {
+    border-color: var(--accent-7);
+    background-color: var(--accent-a2);
+  }
+}
+
+.pairingRow {
+  border-bottom: 1px solid var(--gray-a3);
+  background-color: var(--color-background);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: var(--gray-a2);
+  }
+
+  &.pairingRowActive {
+    background-color: var(--accent-a3);
+  }
+}
+
+.pairingRemoveButton {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+
+  .pairingRow:hover & {
+    opacity: 1;
+  }
+}
+
+/* Sidebar toggle */
+.sidebarToggle {
+  width: 24px;
+  min-width: 24px;
+  border: none;
+  border-right: 1px solid var(--gray-a4);
+  background-color: var(--color-background);
+  color: var(--gray-a10);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+
+  &:hover {
+    background-color: var(--gray-a3);
+    color: var(--gray-12);
+  }
+}
+
+/* Main content */
+.mainContent {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+/* Transcript panels */
+.transcriptPanel {
+  flex: 1;
+  min-width: 0;
+  border: 2px solid var(--accent-a4);
+  border-radius: var(--radius-3);
+  background-color: var(--color-background);
+}
+
+.transcriptPanelHeader {
+  border-bottom: 1px solid var(--gray-a4);
+}
+
+.segmentedControlBlue {
+  :global(.rt-SegmentedControlItem[data-state="active"]) :global(.rt-SegmentedControlItemLabel) {
+    color: var(--blue-11) !important;
+  }
+}
+
+.werBadge {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Audio player */
+.audioPlayer {
+  border: 1px solid var(--gray-a4);
+  border-radius: var(--radius-3);
+  background-color: var(--gray-a2);
+}
+
+/* Transcript text */
+.transcriptText {
+  line-height: 1.8;
+}
+
+.clickableWord {
+  cursor: pointer;
+}
+
+/* Diff highlighting */
+.wordDeletion {
+  background-color: var(--red-a3);
+  border-radius: var(--radius-1);
+  padding: 1px 2px;
+  text-decoration: line-through;
+  color: var(--red-11);
+}
+
+.wordSubstitution {
+  background-color: var(--amber-a3);
+  border-radius: var(--radius-1);
+  padding: 1px 2px;
+}
+
+.wordInsertion {
+  background-color: var(--red-a3);
+  border-radius: var(--radius-1);
+  padding: 1px 2px;
+  color: var(--red-11);
+}
+
+.wordMatch {
+  padding: 1px 2px;
+}
+
+.wordActive {
+  background-color: var(--accent-a4);
+  border-radius: var(--radius-1);
+  padding: 1px 2px;
+  box-shadow: 0 0 0 1px var(--accent-7);
+}
+
+.wordCorrected {
+  background-color: var(--green-a3);
+  border-radius: var(--radius-1);
+  padding: 1px 2px;
+  color: var(--green-11);
+}
+
+.wordHighlighted {
+  background-color: var(--accent-a5);
+  border-radius: var(--radius-1);
+  padding: 1px 2px;
+  box-shadow: 0 0 0 2px var(--accent-9);
+}
+
+.wordActiveDiff {
+  background-color: var(--amber-a5);
+  border-radius: var(--radius-1);
+  padding: 1px 2px;
+  box-shadow: 0 0 0 1px var(--amber-8);
+}
+
+/* Diff items list */
+.diffItemRow {
+  border: 1px solid var(--gray-a4);
+  border-radius: var(--radius-3);
+  background-color: var(--color-background);
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    border-color: var(--gray-a6);
+    background-color: var(--gray-a2);
+  }
+}
+
+.diffItemRowActive {
+  border-color: var(--accent-7);
+  background-color: var(--accent-a2);
+
+  &:hover {
+    border-color: var(--accent-8);
+  }
+}
+
+.diffItemRowReviewed {
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.wordPair {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+.wordMissing {
+  color: var(--gray-a8);
+  font-style: italic;
+}
+
+.replacementInput {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+/* Comparison panel (right rail) */
+.comparisonPanel {
+  width: 380px;
+  min-width: 380px;
+  border-left: 1px solid var(--gray-a4);
+  background-color: var(--color-background);
+  overflow-y: auto;
+}
+
+.statusBadge {
+  font-variant-numeric: tabular-nums;
+}
